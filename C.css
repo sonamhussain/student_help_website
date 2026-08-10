@@ -1,0 +1,75 @@
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f8f9fa; /* Light gray background */
+        color: #343a40; /* Dark text color */
+    }
+    .navbar {
+        background-color: #ffffff; /* White navbar */
+        box-shadow: 0 2px 4px rgba(0,0,0,.05);
+    }
+    .hero-section {
+        background: linear-gradient(to right, #667eea, #764ba2); /* Gradient background */
+        color: white;
+        padding: 4rem 0;
+    }
+   .card {
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        border-radius: 0.75rem; /* Rounded corners */
+    }
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,.1);
+    }
+    .btn-primary {
+        background-color: #667eea;
+        border-color: #667eea;
+        transition: background-color 0.3s ease-in-out;
+        border-radius: 0.5rem;
+    }
+    .btn-primary:hover {
+        background-color: #5a67d8;
+        border-color: #5a67d8;
+    }
+    .footer {
+        background-color: #343a40; /* Dark footer */
+        color: white;
+        padding: 2rem 0;
+    }
+        /* Custom scroll-to-top button */
+    #scrollToTopBtn {
+        display: none; /* Hidden by default */
+        position: fixed; /* Fixed position */
+        bottom: 20px; /* Place at the bottom */
+        right: 30px; /* Place at the right */
+        z-index: 99; /* Make sure it does not overlap */
+        border: none; /* Remove borders */
+        outline: none; /* Remove outline */
+        background-color: #667eea; /* Set a background color */
+        color: white; /* Text color */
+        cursor: pointer; /* Add a mouse pointer on hover */
+        padding: 15px; /* Some padding */
+        border-radius: 10px; /* Rounded corners */
+        font-size: 18px; /* Increase font size */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        transition: background-color 0.3s ease;
+    }
+    #scrollToTopBtn:hover {
+        background-color: #5a67d8;
+    }
+    .message-box {
+        background-color: #d1fae5; /* Green for success */
+        color: #065f46;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        margin-top: 1rem;
+        text-align: center;
+        display: none; /* Hidden by default */
+    }
+    .message-box.error {
+        background-color: #fee2e2; /* Red for error */
+        color: #991b1b;
+    }
+    .hidden-section {
+        display: none;
+    }
+    

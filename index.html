@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Helper Hub - Your Exam Prep Partner</title>
+    <!-- Tailwind CSS CDN for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./C.css">
+</head>
+<body class="bg-gray-100">
+
+    <!-- Navbar -->
+    <nav class="navbar p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <a class="text-2xl font-bold text-gray-800" href="#">Student Hub</a>
+            <div class="hidden md:flex space-x-6">
+                <a class="text-gray-600 hover:text-blue-600 font-medium" href="#home">Home</a>
+                <a class="text-gray-600 hover:text-blue-600 font-medium" href="#student-info-section">Get Started</a>
+                <a class="text-gray-600 hover:text-blue-600 font-medium" href="#exams">Exams</a>
+                <a class="text-gray-600 hover:text-blue-600 font-medium" href="#resources">Resources</a>
+                <a class="text-gray-600 hover:text-blue-600 font-medium" href="#motivation">Motivation</a>
+                <a class="text-gray-600 hover:text-blue-600 font-medium" href="#contact">Contact</a>
+            </div>
+            <button id="menuButton" class="md:hidden text-gray-800 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden px-4 pt-2 pb-4 space-y-1">
+            <a class="block text-gray-600 hover:text-blue-600 font-medium py-2" href="#home">Home</a>
+            <a class="block text-gray-600 hover:text-blue-600 font-medium py-2" href="#student-info-section">Get Started</a>
+            <a class="block text-gray-600 hover:text-blue-600 font-medium py-2" href="#exams">Exams</a>
+            <a class="block text-gray-600 hover:text-blue-600 font-medium py-2" href="#resources">Resources</a>
+            <a class="block text-gray-600 hover:text-blue-600 font-medium py-2" href="#motivation">Motivation</a>
+            <a class="block text-gray-600 hover:text-blue-600 font-medium py-2" href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section text-center py-20 rounded-b-lg">
+        <div class="container mx-auto">
+            <h1 class="text-5xl font-extrabold mb-4 leading-tight">Your Gateway to Post-12th Success</h1>
+            <p class="text-xl mb-8">Comprehensive resources for JEE, NEET, CUET, Commerce, and Arts entrance exams.</p>
+            <p class="text-lg mb-8">We're here to guide you every step of the way, from understanding exam patterns to finding the best study materials and boosting your motivation. Start your personalized journey below!</p>
+            <a href="#student-info-section" class="btn-primary inline-block px-8 py-3 text-lg font-semibold text-white rounded-full hover:bg-purple-700 transition duration-300">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Student Information Section -->
+    <section id="student-info-section" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Tell Us About Yourself</h2>
+            <div class="max-w-md mx-auto bg-gray-50 p-8 rounded-lg shadow-lg">
+                <form id="studentInfoForm">
+                    <div class="mb-4">
+                        <label for="studentName" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
+                        <input type="text" id="studentName" name="studentName" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Name" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="studentMobile" class="block text-gray-700 text-sm font-bold mb-2">Mobile Number</label>
+                        <input type="tel" id="studentMobile" name="studentMobile" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="e.g., 9876543210" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="studentEmail" class="block text-gray-700 text-sm font-bold mb-2">Email ID</label>
+                        <input type="email" id="studentEmail" name="studentEmail" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="your@example.com" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="studentClass" class="block text-gray-700 text-sm font-bold mb-2">Current Class</label>
+                        <select id="studentClass" name="studentClass" class="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                            <option value="">Select your current class</option>
+                            <option value="11th">11th</option>
+                            <option value="12th">12th</option>
+                            <option value="passed12th">12th Passout</option>
+                        </select>
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-gray-700 text-sm font-bold mb-2">12th Background</label>
+                        <div class="mt-2">
+                            <label class="inline-flex items-center">
+                                <input type="radio" class="form-radio text-blue-600" name="studentStream" value="science" required>
+                                <span class="ml-2 text-gray-700">Science</span>
+                            </label>
+                            <label class="inline-flex items-center ml-6">
+                                <input type="radio" class="form-radio text-blue-600" name="studentStream" value="commerce">
+                                <span class="ml-2 text-gray-700">Commerce</span>
+                            </label>
+                            <label class="inline-flex items-center ml-6">
+                                <input type="radio" class="form-radio text-blue-600" name="studentStream" value="arts">
+                                <span class="ml-2 text-gray-700">Arts</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div id="studentInfoMessage" class="message-box"></div>
+                    <div class="flex items-center justify-between">
+                        <button type="submit" class="btn-primary w-full py-2 px-4 text-white font-bold rounded-md focus:outline-none focus:shadow-outline">Get Personalized Info</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exam Streams Section (Initially hidden or shown based on form) -->
+    <section id="exams" class="py-16 bg-white hidden-section">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Explore Your Exam Options</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Science Stream Card -->
+                <div id="science-card" class="card bg-white p-6 shadow-lg rounded-lg text-center hidden-section">
+                    <img src="https://placehold.co/100x100/A78BFA/ffffff?text=SCI" alt="Science Icon" class="mx-auto mb-4 rounded-full">
+                    <h3 class="text-2xl font-semibold mb-3 text-gray-800">Science Stream</h3>
+                    <p class="text-gray-600 mb-4">Prepare for engineering, medical, and other science-based entrance exams.</p>
+                    <a href="#science-details" class="btn-primary inline-block px-6 py-2 text-white font-medium rounded-md">View Science Exams</a>
+                </div>
+
+                <!-- Commerce Stream Card -->
+                <div id="commerce-card" class="card bg-white p-6 shadow-lg rounded-lg text-center hidden-section">
+                    <img src="https://placehold.co/100x100/FBBF24/ffffff?text=COM" alt="Commerce Icon" class="mx-auto mb-4 rounded-full">
+                    <h3 class="text-2xl font-semibold mb-3 text-gray-800">Commerce Stream</h3>
+                    <p class="text-gray-600 mb-4">Guidance for business, finance, and accounting-related entrance exams.</p>
+                    <a href="#commerce-details" class="btn-primary inline-block px-6 py-2 text-white font-medium rounded-md">View Commerce Exams</a>
+                </div>
+
+                <!-- Arts Stream Card -->
+                <div id="arts-card" class="card bg-white p-6 shadow-lg rounded-lg text-center hidden-section">
+                    <img src="https://placehold.co/100x100/60A5FA/ffffff?text=ART" alt="Arts Icon" class="mx-auto mb-4 rounded-full">
+                    <h3 class="text-2xl font-semibold mb-3 text-gray-800">Arts Stream</h3>
+                    <p class="text-gray-600 mb-4">Resources for humanities, social sciences, and creative arts admissions.</p>
+                    <a href="#arts-details" class="btn-primary inline-block px-6 py-2 text-white font-medium rounded-md">View Arts Exams</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Science Details Section -->
+    <section id="science-details" class="py-16 bg-gray-50 hidden-section">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Science Stream: Engineering & Medical Exams</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <!-- JEE Section -->
+                <div class="bg-white p-6 shadow-lg rounded-lg">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">JEE (Joint Entrance Examination)</h3>
+                    <p class="text-gray-700 mb-4">JEE is a national-level entrance examination for admission to various undergraduate engineering programs (B.E./B.Tech) at premier institutions like IITs, NITs, and other GFTIs across India. It's the gateway for aspiring engineers.</p>
+                    <h4 class="text-xl font-semibold mb-2 text-gray-800">Career Paths:</h4>
+                    <ul class="list-disc list-inside text-gray-600 mb-4">
+                        <li>Engineering (Computer Science, Mechanical, Civil, Electrical, Chemical, Aerospace, etc.)</li>
+                        <li>Architecture (B.Arch) - via JEE Main Paper 2</li>
+                        <li>Planning (B.Planning) - via JEE Main Paper 3</li>
+                    </ul>
+                    <h4 class="text-xl font-semibold mb-2 text-gray-800">Key Information:</h4>
+                    <ul class="list-disc list-inside text-gray-600">
+                        <li>**Two phases:** JEE Main (for NITs, IIITs, GFTIs) & JEE Advanced (exclusively for IITs).</li>
+                        <li>**Eligibility:** 10+2 with Physics, Chemistry, Mathematics. Specific aggregate marks may apply.</li>
+                        <li>**Syllabus:** Physics, Chemistry, Mathematics (based on 11th & 12th CBSE curriculum).</li>
+                        <li>**Exam Frequency:** JEE Main is held twice a year, JEE Advanced once a year.</li>
+                    </ul>
+                </div>
+
+                <!-- NEET Section -->
+                <div class="bg-white p-6 shadow-lg rounded-lg">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">NEET (National Eligibility cum Entrance Test)</h3>
+                    <p class="text-gray-700 mb-4">NEET is the single national-level entrance examination for admission to undergraduate medical (MBBS), dental (BDS), AYUSH (BAMS, BHMS, BUMS, BHMS), Veterinary (BVSc & AH), and Nursing programs across India. It's crucial for those aiming for a career in healthcare.</p>
+                    <h4 class="text-xl font-semibold mb-2 text-gray-800">Career Paths:</h4>
+                    <ul class="list-disc list-inside text-gray-600 mb-4">
+                        <li>Medicine (MBBS) - becoming a Doctor</li>
+                        <li>Dentistry (BDS) - becoming a Dentist</li>
+                        <li>Ayurveda, Yoga & Naturopathy, Unani, Siddha and Homoeopathy (AYUSH) Practitioners</li>
+                        <li>Veterinary Science (BVSc & AH)</li>
+                        <li>Nursing (B.Sc. Nursing) - becoming a Registered Nurse</li>
+                        <li>Pharmacy (B.Pharma) - many colleges accept NEET scores</li>
+                    </ul>
+                    <h4 class="text-xl font-semibold mb-2 text-gray-800">Key Information:</h4>
+                    <ul class="list-disc list-inside text-gray-600">
+                        <li>**Single national-level exam.**</li>
+                        <li>**Eligibility:** 10+2 with Physics, Chemistry, Biology/Biotechnology & English, with minimum aggregate marks (varies by category).</li>
+                        <li>**Syllabus:** Physics, Chemistry, Biology (Botany & Zoology) (based on 11th & 12th CBSE curriculum).</li>
+                        <li>**Exam Frequency:** Held once a year, usually in May.</li>
+                    </ul>
+                </div>
+
+                <!-- NDA Section (New) -->
+                <div class="bg-white p-6 shadow-lg rounded-lg md:col-span-2">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">NDA (National Defence Academy)</h3>
+                    <p class="text-gray-700 mb-4">The NDA examination is conducted by UPSC for admission to the Army, Navy, and Air Force wings of the NDA. It's a prestigious opportunity for students aspiring to join the Indian Armed Forces as officers right after 12th grade.</p>
+                    <h4 class="text-xl font-semibold mb-2 text-gray-800">Career Paths:</h4>
+                    <ul class="list-disc list-inside text-gray-600 mb-4">
+                        <li>Officer in Indian Army</li>
+                        <li>Officer in Indian Navy</li>
+                        <li>Officer in Indian Air Force</li>
+                    </ul>
+                    <h4 class="text-xl font-semibold mb-2 text-gray-800">Key Information:</h4>
+                    <ul class="list-disc list-inside text-gray-600">
+                        <li>**Eligibility:** 10+2 (Science stream with PCM for Air Force/Naval Wings & Naval Academy; any stream for Army Wing). Age restrictions apply (usually 16.5 to 19.5 years).</li>
+                        <li>**Selection Process:** Written Examination (Mathematics & General Ability Test) followed by Services Selection Board (SSB) Interview and Medical Examination.</li>
+                        <li>**Syllabus:** Mathematics (Algebra, Calculus, Matrices, Vectors etc.), General Ability Test (English, General Knowledge, Physics, Chemistry, General Science, History, Geography, Current Events).</li>
+                        <li>**Exam Frequency:** Conducted twice a year (NDA I and NDA II).</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <a href="#resources" class="btn-primary inline-block px-8 py-3 text-lg font-semibold text-white rounded-full hover:bg-purple-700 transition duration-300">Find Science Resources</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Commerce Details Section -->
+    <section id="commerce-details" class="py-16 bg-white hidden-section">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Commerce Stream: Business & Finance Exams</h2>
+
+            <div class="bg-white p-6 shadow-lg rounded-lg mb-12">
+                <p class="text-gray-700 mb-4">The Commerce stream opens doors to a wide array of careers in business, finance, accounting, and management. Many universities conduct their own entrance exams or use CUET scores for admission to popular undergraduate programs.</p>
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">Popular Exams & Programs:</h3>
+                <ul class="list-disc list-inside text-gray-600 mb-4">
+                    <li>
+                        <span class="font-semibold">CUET (Commerce Domain):</span> For admission to B.Com (Hons), BBA, BMS, BA (Economics Hons.), and other commerce-related courses in various central universities across India.
+                        <ul class="list-circle list-inside ml-5">
+                            <li>**Eligibility:** 10+2 from a recognized board.</li>
+                            <li>**Syllabus:** Accountancy, Business Studies, Economics, Mathematics/Applied Mathematics, General Test (as applicable per university).</li>
+                        </ul>
+                    </li>
+                    <li class="mt-4">
+                        <span class="font-semibold">B.Com (Bachelor of Commerce):</span> A foundational degree for careers in accounting, finance, banking, and business. Many universities have their own entrance exams (e.g., DU JAT for BBA/BMS earlier, now through CUET).
+                        <ul class="list-circle list-inside ml-5">
+                            <li>**Specializations:** Accounting, Finance, Marketing, Human Resources, International Business.</li>
+                        </ul>
+                    </li>
+                    <li class="mt-4">
+                        <span class="font-semibold">BBA (Bachelor of Business Administration):</span> Focuses on management and business fundamentals, ideal for aspiring entrepreneurs or corporate roles. Entrance exams often include Quantitative Ability, Reasoning, English, and General Awareness.
+                        <ul class="list-circle list-inside ml-5">
+                            <li>**Top Exams:** Symbiosis Entrance Test (SET), NMIMS NPAT, IPMAT (for IIMs).</li>
+                        </ul>
+                    </li>
+                    <li class="mt-4">
+                        <span class="font-semibold">CA Foundation (Chartered Accountancy):</span> The entry-level exam for the prestigious CA course, leading to a career in auditing, taxation, and financial management.
+                        <ul class="list-circle list-inside ml-5">
+                            <li>**Eligibility:** Passed 12th examination.</li>
+                            <li>**Subjects:** Principles and Practice of Accounting, Business Laws and Business Correspondence and Reporting, Business Mathematics and Logical Reasoning and Statistics, Business Economics and Business and Commercial Knowledge.</li>
+                        </ul>
+                    </li>
+                    <li class="mt-4">
+                        <span class="font-semibold">CS (Company Secretary) & CMA (Cost and Management Accountant):</span> Other professional courses in corporate governance and cost accounting, respectively.
+                        <ul class="list-circle list-inside ml-5">
+                            <li>**CS Foundation:** Entrance exam for Company Secretary.</li>
+                            <li>**CMA Foundation:** Entrance exam for Cost and Management Accountant.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <h4 class="text-xl font-semibold mb-2 mt-6 text-gray-800">Career Paths:</h4>
+                <ul class="list-disc list-inside text-gray-600">
+                    <li>Accountant, Auditor, Financial Analyst, Investment Banker</li>
+                    <li>Business Consultant, Marketing Manager, Human Resources Manager</li>
+                    <li>Entrepreneurship, Company Secretary, Cost Accountant, Actuary</li>
+                    <li>Economist, Stockbroker, Tax Consultant</li>
+                </ul>
+            </div>
+            <div class="text-center">
+                <a href="#resources" class="btn-primary inline-block px-8 py-3 text-lg font-semibold text-white rounded-full hover:bg-purple-700 transition duration-300">Find Commerce Resources</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Arts Details Section -->
+    <section id="arts-details" class="py-16 bg-gray-50 hidden-section">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Arts Stream: Humanities & Creative Fields Exams</h2>
+
+            <div class="bg-white p-6 shadow-lg rounded-lg mb-12">
+                <p class="text-gray-700 mb-4">The Arts stream offers diverse opportunities in humanities, social sciences, creative arts, and law. It's perfect for students interested in critical thinking, research, communication, and contributing to society through various non-technical fields.</p>
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">Popular Exams & Programs:</h3>
+                <ul class="list-disc list-inside text-gray-600 mb-4">
+                    <li>
+                        <span class="font-semibold">CUET (Arts Domain):</span> For admission to various BA programs in subjects like History, Political Science, Sociology, English, Psychology, Economics, Geography, Philosophy, Journalism, etc., in central universities.
+                        <ul class="list-circle list-inside ml-5">
+                            <li>**Eligibility:** 10+2 from a recognized board.</li>
+                            <li>**Syllabus:** General Test, and specific domain subjects chosen by the student (e.g., History, Political Science, Psychology).</li>
+                        </ul>
+                    </li>
+                    <li class="mt-4">
+                        <span class="font-semibold">BA (Bachelor of Arts):</span> A versatile degree leading to careers in civil services, journalism, teaching, social work, and more.
+                        <ul class="list-circle list-inside ml-5">
+                            <li>**Specializations:** English Literature, History, Political Science, Sociology, Psychology, Economics, Geography, Philosophy, Fine Arts, Performing Arts, etc.</li>
+                        </ul>
+                    </li>
+                    <li class="mt-4">
+                        <span class="font-semibold">Law Entrance Exams (e.g., CLAT, AILET, LSAT India):</span> For admission to integrated BA LLB, BBA LLB programs, leading to a career in law. These are highly competitive exams.
+                        <ul class="list-circle list-inside ml-5">
+                            <li>**CLAT (Common Law Admission Test):** For National Law Universities (NLUs).</li>
+                            <li>**AILET (All India Law Entrance Test):** For National Law University, Delhi (NLU Delhi).</li>
+                            <li>**LSAT India:** For various private law colleges.</li>
+                            <li>**Syllabus:** English Language, Current Affairs including General Knowledge, Legal Reasoning, Logical Reasoning, Quantitative Techniques.</li>
+                        </ul>
+                    </li>
+                    <li class="mt-4">
+                        <span class="font-semibold">Design Entrance Exams (e.g., NID DAT, NIFT, UCEED):</span> For admission to Bachelor of Design (B.Des) programs in fashion, product, graphic, textile design, etc.
+                        <ul class="list-circle list-inside ml-5">
+                            <li>**NID DAT (Design Aptitude Test):** For National Institute of Design.</li>
+                            <li>**NIFT (National Institute of Fashion Technology):** For Fashion Design, Textile Design, etc.</li>
+                            <li>**UCEED (Undergraduate Common Entrance Exam for Design):** For IITs and other institutes.</li>
+                            <li>**Syllabus:** General Aptitude, Design Aptitude, Creative Ability.</li>
+                        </ul>
+                    </li>
+                    <li class="mt-4">
+                        <span class="font-semibold">Mass Communication & Journalism Entrance Exams:</span> For programs like BJMC (Bachelor of Journalism and Mass Communication), BA in Mass Communication, etc.
+                        <ul class="list-circle list-inside ml-5">
+                            <li>**Top Institutes:** Symbiosis Institute of Media and Communication (SIMC), IP University.</li>
+                            <li>**Syllabus:** General Awareness, Media Aptitude, English Language, Reasoning.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <h4 class="text-xl font-semibold mb-2 mt-6 text-gray-800">Career Paths:</h4>
+                <ul class="list-disc list-inside text-gray-600">
+                    <li>Civil Services (IAS, IPS etc.), Journalism, Content Writing, Public Relations, Advertising</li>
+                    <li>Lawyer, Legal Advisor, Judge, Social Worker, Counselor, Psychologist</li>
+                    <li>Designer (Fashion, Graphic, Product, Web), Teacher, Professor, Academician, Historian</li>
+                    <li>Museum Curator, Archaeologist, Sociologist, Economist, Political Scientist</li>
+                    <li>Artist, Musician, Performer, Writer, Editor</li>
+                </ul>
+            </div>
+            <div class="text-center">
+                <a href="#resources" class="btn-primary inline-block px-8 py-3 text-lg font-semibold text-white rounded-full hover:bg-purple-700 transition duration-300">Find Arts Resources</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Resources Section -->
+    <section id="resources" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Valuable Resources</h2>
+            <div class="mb-8 max-w-xl mx-auto">
+                <input type="text" id="resourceSearch" placeholder="Search for resources (e.g., 'JEE Physics', 'NEET Biology notes', 'CA books')" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+            <div id="resourceCardsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Resource Card 1 -->
+                <div class="resource-card bg-white p-6 shadow-md rounded-lg" data-keywords="jee main advanced pyq physics chemistry maths solutions engineering">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">JEE Main & Advanced PYQs</h3>
+                    <p class="text-gray-600 mb-4">Download solved papers from the last 10 years for Physics, Chemistry, and Mathematics.</p>
+                    <a href="#" class="text-blue-600 hover:underline">Download Now &rarr;</a>
+                </div>
+                <!-- Resource Card 2 -->
+                <div class="resource-card bg-white p-6 shadow-md rounded-lg" data-keywords="neet biology notes botany zoology medical mbbs nursing">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">NEET Biology (Botany & Zoology) Notes</h3>
+                    <p class="text-gray-600 mb-4">Chapter-wise concise notes and important diagrams for quick revision.</p>
+                    <a href="#" class="text-blue-600 hover:underline">Access Now &rarr;</a>
+                </div>
+                <!-- Resource Card 3 -->
+                <div class="resource-card bg-white p-6 shadow-md rounded-lg" data-keywords="cuet general test mock series aptitude reasoning gk">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">CUET General Test Mock Series</h3>
+                    <p class="text-gray-600 mb-4">Practice with full-length mock tests designed as per the latest CUET pattern, including Quantitative Aptitude, Logical Reasoning, and General Knowledge.</p>
+                    <a href="#" class="text-blue-600 hover:underline">Start Test &rarr;</a>
+                </div>
+                <!-- Resource Card 4 -->
+                <div class="resource-card bg-white p-6 shadow-md rounded-lg" data-keywords="commerce books study guides bcom bba ca foundation cs cma">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Top Books & Guides for Commerce Entrance</h3>
+                    <p class="text-gray-600 mb-4">Recommended textbooks and study guides for B.Com, BBA, and CA Foundation exams.</p>
+                    <a href="#" class="text-blue-600 hover:underline">View List &rarr;</a>
+                </div>
+                <!-- Resource Card 5 -->
+                <div class="resource-card bg-white p-6 shadow-md rounded-lg" data-keywords="arts essay writing guides humanities law design journalism">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Arts Stream Essay Writing Guides</h3>
+                    <p class="text-gray-600 mb-4">Tips and sample essays for various humanities subjects and competitive exams.</p>
+                    <a href="#" class="text-blue-600 hover:underline">Read Guides &rarr;</a>
+                </div>
+                <!-- Resource Card 6 -->
+                <div class="resource-card bg-white p-6 shadow-md rounded-lg" data-keywords="time management study tips productivity stress exam preparation">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Effective Time Management for Exams</h3>
+                    <p class="text-gray-600 mb-4">Strategies to create a study schedule, avoid procrastination, and maximize productivity.</p>
+                    <a href="#" class="text-blue-600 hover:underline">Learn More &rarr;</a>
+                </div>
+                <!-- Resource Card 7 (Science Specific) -->
+                <div class="resource-card bg-white p-6 shadow-md rounded-lg" data-keywords="physics formula sheet science pcm jee neet">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Physics Formula Handbook</h3>
+                    <p class="text-gray-600 mb-4">A comprehensive collection of essential Physics formulas for quick reference for JEE & NEET.</p>
+                    <a href="#" class="text-blue-600 hover:underline">Download PDF &rarr;</a>
+                </div>
+                <!-- Resource Card 8 (Science Specific) -->
+                <div class="resource-card bg-white p-6 shadow-md rounded-lg" data-keywords="chemistry mind maps organic inorganic reaction mechanisms science jee neet">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Chemistry Reaction Mechanisms Mind Maps</h3>
+                    <p class="text-gray-600 mb-4">Visual aids to understand complex organic and inorganic reaction mechanisms for competitive exams.</p>
+                    <a href="#" class="text-blue-600 hover:underline">View Maps &rarr;</a>
+                </div>
+                <!-- Resource Card 9 (CUET/Arts/Commerce) -->
+                <div class="resource-card bg-white p-6 shadow-md rounded-lg" data-keywords="cuet english language practice grammar vocabulary comprehension arts commerce">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">CUET English Language Practice Set</h3>
+                    <p class="text-gray-600 mb-4">Practice questions for Reading Comprehension, Vocabulary, and Grammar sections.</p>
+                    <a href="#" class="text-blue-600 hover:underline">Practice Now &rarr;</a>
+                </div>
+                <!-- Resource Card 10 (Science/NDA Specific) -->
+                <div class="resource-card bg-white p-6 shadow-md rounded-lg" data-keywords="nda ssb interview tips defence armed forces">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">NDA SSB Interview Preparation Guide</h3>
+                    <p class="text-gray-600 mb-4">Essential tips and strategies to ace the Services Selection Board interview for NDA.</p>
+                    <a href="#" class="text-blue-600 hover:underline">Read Guide &rarr;</a>
+                </div>
+                 <!-- Resource Card 11 (Commerce/Arts Specific) -->
+                <div class="resource-card bg-white p-6 shadow-md rounded-lg" data-keywords="clat law entrance legal reasoning current affairs">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">CLAT Legal Aptitude Practice</h3>
+                    <p class="text-gray-600 mb-4">Practice exercises for Legal Reasoning and General Knowledge sections of CLAT.</p>
+                    <a href="#" class="text-blue-600 hover:underline">Practice Now &rarr;</a>
+                </div>
+                 <!-- Resource Card 12 (Arts Specific) -->
+                <div class="resource-card bg-white p-6 shadow-md rounded-lg" data-keywords="design aptitude uceed nid nift creative portfolio">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Design Entrance Exam Portfolio Tips</h3>
+                    <p class="text-gray-600 mb-4">Guidance on preparing a strong portfolio for NID, NIFT, and UCEED admissions.</p>
+                    <a href="#" class="text-blue-600 hover:underline">View Tips &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Motivational Stories Section -->
+    <section id="motivation" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Boost Your Spirit: Motivational Stories</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Story 1 -->
+                <div class="bg-gray-50 p-6 shadow-md rounded-lg">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">The Power of Persistence: Rahul's JEE Journey</h3>
+                    <p class="text-gray-600 mb-4">Rahul faced multiple setbacks in his JEE preparation, but his unwavering dedication and consistent effort eventually led him to secure a seat in his dream IIT. His story is a testament to the fact that hard work always pays off.</p>
+                    <a href="#" class="text-blue-600 hover:underline">Read Full Story &rarr;</a>
+                </div>
+                <!-- Story 2 -->
+                <div class="bg-gray-50 p-6 shadow-md rounded-lg">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">From Doubt to Doctor: Priya's NEET Success</h3>
+                    <p class="text-gray-600 mb-4">Priya struggled with self-doubt throughout her NEET journey. Through consistent practice, smart study techniques, and believing in herself, she not only cleared NEET but also got into a top medical college.</p>
+                    <a href="#" class="text-blue-600 hover:underline">Read Full Story &rarr;</a>
+                </div>
+                <!-- Story 3 -->
+                <div class="bg-gray-50 p-6 shadow-md rounded-lg">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">The Entrepreneurial Spirit: Rohan's BBA Path</h3>
+                    <p class="text-gray-600 mb-4">Rohan, a commerce student, used his BBA studies as a launchpad for his startup. His story highlights how academic knowledge combined with passion can lead to innovative ventures.</p>
+                    <a href="#" class="text-blue-600 hover:underline">Read Full Story &rarr;</a>
+                </div>
+                <!-- Story 4 -->
+                <div class="bg-gray-50 p-6 shadow-md rounded-lg">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Beyond the Books: Anjali's Arts Journey</h3>
+                    <p class="text-gray-600 mb-4">Anjali, an Arts student, initially felt limited by her stream choice. However, she discovered her passion for social work and used her humanities background to make a significant impact in her community.</p>
+                    <a href="#" class="text-blue-600 hover:underline">Read Full Story &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Get in Touch</h2>
+            <div class="max-w-md mx-auto bg-gray-50 p-8 rounded-lg shadow-lg">
+                <form>
+                    <div class="mb-4">
+                        <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
+                        <input type="text" id="name" name="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Name">
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+                        <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="your@example.com">
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message</label>
+                        <textarea id="message" name="message" rows="5" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Your message..."></textarea>
+                    </div>
+                    <div id="formMessage" class="message-box"></div>
+                    <div class="flex items-center justify-between">
+                        <button type="submit" class="btn-primary w-full py-2 px-4 text-white font-bold rounded-md focus:outline-none focus:shadow-outline">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer text-center py-8 rounded-t-lg">
+        <div class="container mx-auto">
+            <p>&copy; 2025 Student Hub. All rights reserved.</p>
+            <div class="flex justify-center space-x-4 mt-4">
+                <a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a>
+                <a href="#" class="text-gray-400 hover:text-white">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" title="Go to top">↑</button>
+
+    <script>
+        // JavaScript for Mobile Menu Toggle
+        const menuButton = document.getElementById('menuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // JavaScript for Scroll to Top Button
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        scrollToTopBtn.addEventListener('click', () => {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        });
+
+        // Custom message box function
+        function showMessage(message, isError = false, targetId = 'formMessage') {
+            const messageBox = document.getElementById(targetId);
+            messageBox.textContent = message;
+            messageBox.classList.remove('hidden', 'error');
+            if (isError) {
+                messageBox.classList.add('error');
+            } else {
+                messageBox.classList.remove('error');
+            }
+            messageBox.style.display = 'block';
+            setTimeout(() => {
+                messageBox.style.display = 'none';
+            }, 3000);
+        }
+
+        // Form validation for Contact Section
+        document.querySelector('#contact form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (name === '' || email === '' || message === '') {
+                showMessage('Please fill in all fields.', true, 'formMessage');
+                console.error('Form validation error: All fields are required in contact form.');
+            } else if (!validateEmail(email)) {
+                showMessage('Please enter a valid email address.', true, 'formMessage');
+                console.error('Form validation error: Invalid email format in contact form.');
+            } else {
+                showMessage('Message sent successfully!', false, 'formMessage');
+                console.log('Contact form submitted successfully (simulated)!');
+                this.reset(); // Clear the form
+            }
+        });
+
+        function validateEmail(email) {
+            const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(String(email).toLowerCase());
+        }
+
+        // Student Info Form Logic
+        document.getElementById('studentInfoForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const studentName = document.getElementById('studentName').value.trim();
+            const studentMobile = document.getElementById('studentMobile').value.trim();
+            const studentEmail = document.getElementById('studentEmail').value.trim();
+            const studentClass = document.getElementById('studentClass').value;
+            const studentStream = document.querySelector('input[name="studentStream"]:checked')?.value;
+
+            if (!studentName || !studentMobile || !studentEmail || !studentClass || !studentStream) {
+                showMessage('Please fill in all student information fields.', true, 'studentInfoMessage');
+                return;
+            }
+            if (!validateEmail(studentEmail)) {
+                showMessage('Please enter a valid email address for student info.', true, 'studentInfoMessage');
+                return;
+            }
+             if (!/^\d{10}$/.test(studentMobile)) {
+                showMessage('Please enter a valid 10-digit mobile number.', true, 'studentInfoMessage');
+                return;
+            }
+
+
+            // Hide all detailed exam sections and exam stream cards initially
+            document.getElementById('science-details').classList.add('hidden-section');
+            document.getElementById('commerce-details').classList.add('hidden-section');
+            document.getElementById('arts-details').classList.add('hidden-section');
+
+            document.getElementById('science-card').classList.add('hidden-section');
+            document.getElementById('commerce-card').classList.add('hidden-section');
+            document.getElementById('arts-card').classList.add('hidden-section');
+
+            // Show the main 'Exams' section title
+            document.getElementById('exams').classList.remove('hidden-section');
+
+            // Based on studentStream, show relevant exam card and details section
+            if (studentStream === 'science') {
+                document.getElementById('science-card').classList.remove('hidden-section');
+                document.getElementById('science-details').classList.remove('hidden-section');
+                // Scroll to science details
+                document.getElementById('science-details').scrollIntoView({ behavior: 'smooth' });
+            } else if (studentStream === 'commerce') {
+                document.getElementById('commerce-card').classList.remove('hidden-section');
+                document.getElementById('commerce-details').classList.remove('hidden-section');
+                // Scroll to commerce details
+                document.getElementById('commerce-details').scrollIntoView({ behavior: 'smooth' });
+            } else if (studentStream === 'arts') {
+                document.getElementById('arts-card').classList.remove('hidden-section');
+                document.getElementById('arts-details').classList.remove('hidden-section');
+                // Scroll to arts details
+                document.getElementById('arts-details').scrollIntoView({ behavior: 'smooth' });
+            }
+
+            showMessage('Personalized information displayed below!', false, 'studentInfoMessage');
+            this.reset(); // Clear the form after submission
+        });
+
+        // Resource Search Functionality
+        document.getElementById('resourceSearch').addEventListener('keyup', function() {
+            const searchTerm = this.value.toLowerCase();
+            const resourceCards = document.querySelectorAll('.resource-card');
+
+            resourceCards.forEach(card => {
+                const keywords = card.dataset.keywords.toLowerCase();
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const description = card.querySelector('p').textContent.toLowerCase();
+
+                if (title.includes(searchTerm) || description.includes(searchTerm) || keywords.includes(searchTerm)) {
+                    card.style.display = 'block'; // Show the card
+                } else {
+                    card.style.display = 'none'; // Hide the card
+                }
+            });
+        });
+    </script>
+</body>
+</html>
